@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.Log
 import io.horizontalsystems.bankwallet.core.ILocalStorage
 import io.horizontalsystems.bankwallet.core.INetManager
-import io.horizontalsystems.netkit.NetKit
+import io.horizontalsystems.tor.TorKit
 import io.horizontalsystems.tor.ConnectionStatus
 import io.horizontalsystems.tor.Tor
 import io.reactivex.Single
@@ -24,8 +24,8 @@ class NetManager(context: Context, val localStorage: ILocalStorage) : INetManage
 
     private val disposables = CompositeDisposable()
     private var listener: Listener? = null
-    private val kit: NetKit by lazy {
-        NetKit(context)
+    private val kit: TorKit by lazy {
+        TorKit(context)
     }
 
     init {
